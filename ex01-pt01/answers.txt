@@ -1,0 +1,31 @@
+What is the maximum GPU bandwidth you observed? For which problem sizes? 
+   nx         | blockSize | trial | MLUP/s       | Bandwidth (GB/s)
+   131072     | 256       | 3     | 49468.60     | 791.4976   
+
+How does it compare to the theoretical maximum published by the vendor?
+448 GB/s
+This bandwidth is achieved using 8 GB of GDDR6 memory on a 256-bit bus, 
+running at an effective clock speed of 14 Gbps.
+Our average is similar (406.32), but maximum is much more higher.  
+(may because of cache?)
+
+How does the GPU bandwidth relate to the CPU bandwidth?
+15-16x faster than serial CPU and about 8x faster than OpenMP CPU. 
+
+Can you identify problem sizes that are better suited for CPU or for GPU?
+CPU: nx=4096(32KB)
+GPU: over 1 MB
+
+What CUDA block size did you choose? How did you make that choice?
+1024, best average bandwidth for larger data. 
+
+How did you map CUDA threads to image pixels?
+
+
+How much (global) memory is accessed by each thread? 
+
+How many computations are done by each thread? Does this kernel show 
+a different balance (bytes / flop) than the one from the previous exercise?
+
+
+How can you find out what the bottleneck of your kernel is?
