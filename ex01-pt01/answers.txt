@@ -9,6 +9,8 @@ running at an effective clock speed of 14 Gbps.
 Our average is similar (406.32), but maximum is much more higher.  
 (may because of cache?)
 
+cache effect: cache is filled around 1MB. 
+
 3. How does the GPU bandwidth relate to the CPU bandwidth?
 15-16x faster than serial CPU and about 8x faster than OpenMP CPU. 
 
@@ -17,7 +19,7 @@ CPU: nx=4096(32KB)
 GPU: over 1 MB
 
 5. What CUDA block size did you choose? How did you make that choice?
-1024, best average bandwidth for larger data. 
+256 according to plot. Larger block size might cause more cache misses. 
 
 6. How did you map CUDA threads to image pixels?
 px = blockId.x * blockDim.x + threadId.x
